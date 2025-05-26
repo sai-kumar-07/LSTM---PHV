@@ -1,12 +1,10 @@
-# Bi-LSTM for Human-Dengue Protein-Protein Interaction Prediction
+# Application of Bi-LSTM for Human-Dengue Protein-Protein Interaction Prediction
 
-This repository presents a deep learning approach for predicting protein-protein interactions between dengue virus and human proteins using Bidirectional Long Short-Term Memory (BiLSTM) networks. Our model achieved an impressive **92.4% AUC score** on the test set, demonstrating the effectiveness of sequence-based neural architectures for understanding host-pathogen interactions. The research successfully identified biologically relevant pathways, including the Glycosphingolipid biosynthesis pathway known to be exploited by dengue virus for host cell entry, validating the biological significance of our computational predictions.
 
 ## Abstract
-
 Protein–protein interactions between viral and human proteins play a vital role in the development and progression of infectious diseases. Viruses such as the dengue virus often exploit host cell processes by interacting with crucial human proteins, aiding in viral replication, immune system evasion, and the onset of disease symptoms. Gaining insight into these interactions is essential to understand host-pathogen relationships, disruptions in cellular signaling pathways, and identifying potential targets for antiviral therapies.
 
-In this work, protein sequences are encoded using k-mers and processed by separate BiLSTM models—one for human and one for dengue proteins—to generate embeddings. These embeddings are then combined and fed into a fully connected neural network trained on labeled interaction data to predict interactions.
+In this work, protein sequences are encoded using k-mers and processed by separate BiLSTM models one for human and one for dengue proteins to generate embeddings. These embeddings are then combined and fed into a fully connected neural network trained on labeled interaction data to predict interaction.
 
 Our model achieved an **AUC score of 92.4%** on the test set. Additionally, the Glycosphingolipid biosynthesis – lacto and neolacto series pathway was enriched in the result of pathway enrichment analysis. This pathway is known to be targeted by the dengue virus for host cell entry, supporting the biological relevance of our predictions.
 
@@ -39,21 +37,21 @@ Negative samples were systematically generated based on subcellular localization
 
 ### Positive Interactions (`Positive_Den_Human.txt`)
 Sample entries showing confirmed dengue-human protein interactions:
-
+<pre>
 1 E interacts with 917 CD3G AIY68806.1_Envelope_DV1
 1 E Binds to 30835 CD209 AIY68806.1_Envelope_DV1
 2 C Upregulates 1191 CLU NP_739591.2_Capsid_DV2
 2 NS4B inhibits interferon (IFN)-induced host 6772 STAT1 NP_739589.2_NS4B_DV2
-
+</pre>
 
 ### Negative Interactions (`Neg_Den_Human.txt`)
 Sample entries for non-interacting protein pairs:
-
+<pre>
 BAV37877.1_capsid_DV1 COL2A1
 BAV37877.1_capsid_DV1 ENGASE
 AIY68806.1_Envelope_DV1 SUCO
 URC21202.1_NS5_DV1 STEAP3
-
+</pre>
 
 ## Methodology
 
@@ -102,13 +100,15 @@ URC21202.1_NS5_DV1 STEAP3
 ## Installation and Usage
 
 ### Prerequisites
-pip install tensorflow
-pip install keras
-pip install pandas
-pip install numpy
-pip install scikit-learn
-pip install matplotlib
-pip install seaborn
+```bash
+pip install tensorflow  
+pip install keras  
+pip install pandas  
+pip install numpy  
+pip install scikit-learn  
+pip install matplotlib  
+pip install seaborn  
+```
 
 
 ### Running the Pipeline
